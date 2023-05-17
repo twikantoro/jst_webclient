@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="utf-8">
+    <title>Prediksi JST</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.slim.min.js"
+        integrity="sha256-a2yjHM4jnF9f54xUQakjZGaqYs/V1CYvWpoqZzC2/Bw=" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+    <nav>
+        <div class="nav-wrapper">
+            <a style="padding-left:20px" href="index.html" class="brand-logo">Prediksi JST</a>
+            <!-- <ul id="nav-mobile" class="right hide-on-med-and-down">
+          </ul> -->
+        </div>
+    </nav>
+    <div class="container">
+        <h4>Buat Model JST</h4>
+        <!-- <a href="/index.html">Kembali</a> -->
+        <form onsubmit="event.preventDefault(); return submitForm()">
+            <row>
+                <label>Nama model</label>
+                <input value="asd" required id="nama_model" type="text" placeholder="Model-420-69" />
+            </row>
+            <row>
+                <label>Data latih</label><br>
+                <input value="2016-01" required id="latih_mulai" type="month">
+                <label> s.d. </label>
+                <input value="2020-12" required id="latih_akhir"type="month" /><br>
+                <div class="switch">
+                    <label onchange="change_latih_london()">
+                        24 Jam
+                        <input value="0" id="latih_london" type="checkbox" />
+                        <span class="lever"></span>
+                        London Session
+                    </label>
+                </div>
+            </row>
+            <br>
+            <row>
+                <label>Data uji</label><br>
+                <input value="2021-01" required id="uji_mulai" type="month">
+                <label> s.d. </label>
+                <input value="2022-12" required id="uji_akhir"type="month" />
+                <div class="switch">
+                    <label onchange="change_uji_london()">
+                        24 Jam
+                        <input value="0" id="uji_london" type="checkbox" />
+                        <span class="lever"></span>
+                        London Session
+                    </label>
+                </div>
+            </row>
+            <br>
+            <row>
+                <label>Susunan neuron</label>
+                <table>
+                    <tr id="additional_layer_head">
+                        <th>L. Input</th>
+                        <th>L. Hidden 1</th>
+                        <th>L. Output</th>
+                    </tr>
+                    <tr id="additional_layer_input">
+                        <td><input disabled type="text" value="200"></td>
+                        <td><input value="123" required id="inp_layer_1" type="number" placeholder="Jumlah Neuron"
+                                class="inp_neurons" /></td>
+                        <td><input disabled type="text" value="2"></td>
+                    </tr>
+                </table>
+            </row>
+
+            <a href="#" onclick="tambahLayer()">Tambahkan hidden layer...</a>
+            &nbsp; &nbsp;
+            <a href="#" onclick="kurangiLayer()">Kurangi hidden layer...</a>
+
+            <br>
+
+            <br>
+            <div id="buttons">
+                <!-- <a id="tombol_submit" onclick="submitForm()" class="btn">Buat</a> -->
+                <input class="btn" id="tombol_submit" value="Buat" type="submit" />
+                <a href="index.html" class="btn danger">Batal</a>
+            </div>
+        </form>
+        <h3 style="display:none" id="loading">...</h3>
+    </div>
+    <script src="scripts/buat.js"></script>
+    <script>
+    </script>
+</body>
+
+</html>

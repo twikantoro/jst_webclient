@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="utf-8">
+    <title>Prediksi JST</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.4.slim.min.js"
+        integrity="sha256-a2yjHM4jnF9f54xUQakjZGaqYs/V1CYvWpoqZzC2/Bw=" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.socket.io/4.6.0/socket.io.min.js"
+        integrity="sha384-c79GN5VsunZvi+Q/WObgk2in0CbZsHnjEqvFxC5DxHn9lTfNce2WW6h2pH6u/kF+"
+        crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/2d52c10678.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <nav>
+        <div class="nav-wrapper">
+            <a style="padding-left:20px" href="index.html" class="brand-logo">Prediksi JST</a>
+            <!-- <ul id="nav-mobile" class="right hide-on-med-and-down">
+          </ul> -->
+        </div>
+    </nav>
+    <div class="container">
+        <h4>Latih Model JST</h4>
+        <h5 style="margin-top: 20px;">Model</h5>
+
+        <p><b>Nama: </b><span id="nama"></span></p>
+        <p><b>Data latih: </b><span id="data_latih"></span></p>
+        <p><b>Data uji: </b><span id="data_uji"></span></p>
+        <p><b>Susunan neuron: </b><span id="susunan_neuron"></span></p>
+
+        <br>
+        <h5>Pelatihan</h5>
+        <p><b>Status: </b><span id="status"></span></p>
+        <p><b>Jumlah iterasi (epoch): </b><span id="jml_iterasi">memuat...</span></spam>
+        </p>
+        <p><b>Loss: </b><span id="loss">-</span></p>
+        <p><b>Akurasi: </b><span id="akurasi">-</span></p>
+        <label>Kembali ke epoch...</label><div style="width:60px"><input id="inp_epoch" value="0" type="number"></div>
+        <a id="btn_revert" disabled class="btn"><i class="fas fa-backward material-icons left"></i>Revert</a>
+        <a onclick="train()" id="btn_train" disabled class="btn"><i class="fas fa-play material-icons left"></i>Latih 1 epoch</a>
+
+        <div>
+            <canvas id="myChart"></canvas>
+        </div>
+
+        <br>
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="scripts/latih.js"></script>
+    <script src="scripts/latih_chart.js"></script>
+    <script>
+        
+
+    </script>
+</body>
+
+</html>
